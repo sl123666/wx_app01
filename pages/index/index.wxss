@@ -17,6 +17,7 @@
 }
 .floor_title image{
 	width: 100%;
+	margin-top: 30rpx;
 }
 .floor_list navigator{
 	width: 33.33%;
@@ -24,18 +25,25 @@
 }
 .floor_list navigator:nth-child(1){
 	height: calc(33.33vw*386/232);
+	border-right: 10rpx solid #fff;
 }
 .floor_list navigator:nth-child(2){
 	height: calc(33.33vw*386/232/2);
+	border-bottom: 10rpx solid #fff;
 }
 .floor_list navigator:nth-child(3){
 	height: calc(33.33vw*386/232/2);
+	border-left: 10rpx solid #fff;
+	border-bottom: 10rpx solid #fff;
 }
 .floor_list navigator:nth-child(4){
 	height: calc(33.33vw*386/232/2);
+	border-bottom: 10rpx solid #fff;
 }
 .floor_list navigator:nth-child(5){
 	height: calc(33.33vw*386/232/2);
+	border-left: 10rpx solid #fff;
+	border-bottom: 10rpx solid #fff;
 }
 .floor_list navigator image{
 	width: 100%;

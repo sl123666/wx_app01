@@ -1,18 +1,19 @@
 // pages/category/category.js
+import {request} from "../../request/index"
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		categoryList:[]
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getCateGoryList();
 	},
 
 	/**
@@ -62,5 +63,12 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+	getCateGoryList(){
+		request({url: 'http://api-hmugo-web.itheima.net/api/public/v1/categories'}).then((result)=>{
+			this.setData({
+				categoryList: result.data.message
+			})
+		})
 	}
 })

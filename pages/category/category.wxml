@@ -1,2 +1,23 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="yg_category">
+	<!-- 搜索框start -->
+	<searchInput></searchInput>
+	<!-- 搜索框end -->
+	<view class="content">
+		<scroll-view class="list" scroll-y>
+			<view class="list_item" wx:for="{{categoryList}}" wx:for-index="index" wx:key="cat_id">{{item.cat_name}}</view>
+		</scroll-view>
+		<scroll-view class="detail" scroll-y>
+			<view class="commodity" wx:for="{{categoryList[0].children}}" wx:for-item="item1" wx:key="cat_id">
+				<view class="title">{{item1.cat_name}}</view>
+				<view class="list">
+					<view class="list_detail" wx:for="{{item1.children}}" wx:for-item="item2" wx:key="cat_id">
+						<image mode="widthFix" src="{{item2.cat_icon}}"></image>
+						<view>{{item2.cat_name}}</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	
+</view>
