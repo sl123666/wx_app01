@@ -1,0 +1,23 @@
+.yg_index swiper image{
+	width: 100%;
+}
+.yg_index swiper{
+	width: 750rpx;
+	height: 340rpx;
+}
+.index_cate{
+	display: flex;
+}
+.index_cate navigator{
+	flex: 1;
+	padding: 20px;
+}
+.index_cate navigator image{
+	width: 100%;
+}
+.floor_title image{
+	width: 100%;
+}
+.floor_list navigator{
+	
+}

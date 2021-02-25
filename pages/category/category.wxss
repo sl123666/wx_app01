@@ -1,0 +1,4 @@
+/* pages/category/category.wxss */
+text{
+	color: var(--themeColor);
+}
