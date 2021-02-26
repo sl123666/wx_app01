@@ -6,14 +6,28 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		categoryList:[]
+		categoryList: [],
+		currentIndex: 0,
+		scrollTop:0,
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getCateGoryList();
+		let cates = wx.getStorageSync('cates');
+		if(!cates){//没有缓存
+			this.getCateGoryList();
+		}else{//有缓存
+			if(Date.now()-cates.time>1000*10){//过期
+				this.getCateGoryList();
+			}else{
+				this.setData({
+					categoryList: cates.data
+				})
+			}
+		}
+		
 	},
 
 	/**
@@ -65,10 +79,26 @@ Page({
 
 	},
 	getCateGoryList(){
-		request({url: 'http://api-hmugo-web.itheima.net/api/public/v1/categories'}).then((result)=>{
+		request({url: '/categories'}).then((result)=>{
+			wx.setStorage({
+			  data: {
+				  time: Date.now(),
+				  data: result.data.message
+			  },
+			  key: 'cates',
+			})
 			this.setData({
 				categoryList: result.data.message
 			})
+		})
+	},
+	handleItem(e){
+		console.log(e);
+		this.setData({
+			currentIndex: e.target.dataset.index
+		})
+		this.setData({
+			scrollTop:0
 		})
 	}
 })

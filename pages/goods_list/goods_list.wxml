@@ -1,2 +1,18 @@
 <!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<view class="yg_goods_list">
+	<!-- 搜索框start -->
+	<searchInput></searchInput>
+	<!-- 搜索框end -->
+	<tabs tabs="{{tabsList}}" bindtabHandle="tabHandle"></tabs>
+	<view class="goods_list">
+		<navigator class="goods" wx:for="{{goodsList}}" wx:for-index="index" wx:key="goods_id">
+			<view class="image">
+				<image mode="widthFix" src="{{item.goods_big_logo}}"></image>
+			</view>
+			<view class="detail">
+				<text class="name">{{item.goods_name}}</text>
+				<text class="price">{{item.goods_price}}￥</text>
+			</view>
+		</navigator>
+	</view>
+</view>

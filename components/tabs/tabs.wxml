@@ -1,0 +1,5 @@
+<!--components/tabs/tabs.wxml-->
+<view class="tabs">
+	<view wx:for="{{tabs}}" wx:key="id" bindtap="handleTap" data-index="{{index}}"
+	 class="tab {{index==currentIndex?'isSelect':''}}">{{item.name}}</view>
+</view>

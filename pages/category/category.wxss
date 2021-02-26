@@ -18,7 +18,10 @@
 	width: 100%;
 	height: 100rpx;
 	line-height: 100rpx;
-	border-left: 5rpx solid #f00;
+}
+.select{
+	border-left: 5rpx solid #eb4450;
+	color: #eb4450;
 }
 .detail{
 	width: 72%;
@@ -32,6 +35,9 @@
 }
 .commodity .title{
 	margin: 50rpx 0 0;
+	border-left: 1rpx solid #333;
+	border-right: 1rpx solid #333;
+	padding: 0 30rpx;
 }
 .commodity .list{
 	width: 100%;

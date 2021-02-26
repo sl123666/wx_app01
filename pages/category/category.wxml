@@ -5,16 +5,16 @@
 	<!-- 搜索框end -->
 	<view class="content">
 		<scroll-view class="list" scroll-y>
-			<view class="list_item" wx:for="{{categoryList}}" wx:for-index="index" wx:key="cat_id">{{item.cat_name}}</view>
+			<view class="list_item {{index==currentIndex?'select':''}}" wx:for="{{categoryList}}" wx:for-index="index" wx:key="cat_id" bindtap="handleItem" data-index="{{index}}">{{item.cat_name}}</view>
 		</scroll-view>
-		<scroll-view class="detail" scroll-y>
-			<view class="commodity" wx:for="{{categoryList[0].children}}" wx:for-item="item1" wx:key="cat_id">
+		<scroll-view class="detail" scroll-y scroll-top="{{scrollTop}}">
+			<view class="commodity" wx:for="{{categoryList[currentIndex].children}}" wx:for-item="item1" wx:key="cat_id">
 				<view class="title">{{item1.cat_name}}</view>
 				<view class="list">
-					<view class="list_detail" wx:for="{{item1.children}}" wx:for-item="item2" wx:key="cat_id">
+					<navigator url="/pages/goods_list/goods_list?cid={{item2.cat_id}}" class="list_detail" wx:for="{{item1.children}}" wx:for-item="item2" wx:key="cat_id">
 						<image mode="widthFix" src="{{item2.cat_icon}}"></image>
 						<view>{{item2.cat_name}}</view>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</scroll-view>

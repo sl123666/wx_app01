@@ -1,0 +1,17 @@
+/* components/tabs/tabs.wxss */
+.tabs{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.tab{
+	flex: 1;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	border-bottom: 4rpx solid #999;
+}
+.isSelect{
+	color: #eb4450;
+	border-bottom: 4rpx solid #eb4450;
+}

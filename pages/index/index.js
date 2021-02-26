@@ -82,7 +82,7 @@ wx-Page({
   },
   //获取轮播图数据
   getSwiperList(){
-    request({url: 'http://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'}).then((result)=>{
+    request({url: '/home/swiperdata'}).then((result)=>{
       this.setData({
         swiperList: result.data.message
       })
@@ -90,7 +90,7 @@ wx-Page({
   },
   //获取导航数据
   getCateList(){
-    request({url: 'http://api-hmugo-web.itheima.net/api/public/v1/home/catitems'}).then((result)=>{
+    request({url: '/home/catitems'}).then((result)=>{
       this.setData({
         cateList: result.data.message
       })
@@ -98,7 +98,7 @@ wx-Page({
   },
   //获取楼层数据
   getFloorList(){
-    request({url: 'http://api-hmugo-web.itheima.net/api/public/v1/home/floordata'}).then((result)=>{
+    request({url: '/home/floordata'}).then((result)=>{
       this.setData({
         floorList: result.data.message
       })
