@@ -5,7 +5,7 @@
 	<!-- 搜索框end -->
 	<tabs tabs="{{tabsList}}" bindtabHandle="tabHandle"></tabs>
 	<view class="goods_list">
-		<navigator class="goods" wx:for="{{goodsList}}" wx:for-index="index" wx:key="goods_id">
+		<navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="goods" wx:for="{{goodsList}}" wx:for-index="index" wx:key="goods_id">
 			<view class="image">
 				<image mode="widthFix" src="{{item.goods_big_logo}}"></image>
 			</view>

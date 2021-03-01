@@ -1,1 +1,81 @@
 /* pages/cart/cart.wxss */
+.address_btn{
+	width: 50%;
+	margin: 30rpx auto;
+}
+.address_box{
+	display: flex;
+	font-size: 26rpx;
+	height: 120rpx;
+	border-bottom: 1rpx solid #f00;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20rpx;
+}
+.address{
+	display: flex;
+	flex-direction: column;
+}
+.title{
+	height: 80rpx;
+	border-bottom: 5rpx solid #f00;
+	padding: 0 20rpx;
+	line-height: 80rpx;
+	font-weight: bold;
+}
+.content{
+	margin-bottom: 100rpx;
+}
+.cartList{
+	height: 240rpx;
+	display: flex;
+	align-items: center;
+	border-bottom: 1rpx solid #ccc;
+	padding: 10rpx;
+}
+
+
+.pic{
+	width: 180rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+.detail{
+	flex: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.prices{
+	display: flex;
+	justify-content: space-between;
+}
+.price{
+	color: #f00;
+	font-weight: bold;
+}
+.add_del{
+	display: flex;
+}
+.add_del view{
+	width: 60rpx;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	margin-left: 30rpx;
+	border: 1px solid #ccc;
+}
+.add_del text{
+	margin-left: 30rpx;
+	line-height: 60rpx;
+}
+.footer{
+	height: 100rpx;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	background-color: #fff;
+}

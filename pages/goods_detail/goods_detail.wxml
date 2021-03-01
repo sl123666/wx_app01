@@ -1,2 +1,38 @@
 <!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="yg_detail">
+	<swiper autoplay indicator-dots circular>
+		<swiper-item bindtap="handlePreview" data-index="{{index}}" wx:for="{{goods_detail.pics}}" wx:for-index="index" wx:key="pics_id">
+			<image mode="widthFix" src="{{item.pics_big}}"></image>
+		</swiper-item>
+	</swiper>
+	<text class="price">￥{{goods_detail.goods_price}}</text>
+	<view class="goods">
+		<text class="goods_name">{{goods_detail.goods_name}}</text>
+		<view class="shoucang">
+			<text class="iconfont icon-shoucang"></text>
+			<text>收藏</text>
+		</view>
+	</view>
+	<view class="pic_word">图文详情</view>
+	<rich-text nodes="{{goods_detail.goods_introduce}}"></rich-text>
+	<view class="bottom_list">
+		<view class="kefu">
+			<text class="iconfont icon-kefu"></text>
+			<text>联系客服</text>
+		</view>
+		<view class="kefu">
+			<text class="iconfont icon-kefu"></text>
+			<text>分享</text>
+		</view>
+		<navigator url="/pages/cart/cart" open-type="switchTab" class="kefu">
+			<text class="iconfont icon-kefu"></text>
+			<text>购物车</text>
+		</navigator>
+		<view class="add" bindtap="handleGouWuChe">
+			加入购物车
+		</view>
+		<view class="buy">
+			立即购买
+		</view>
+	</view>
+</view>

@@ -1,2 +1,48 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="yg_cart">
+	<view wx:if="{{address.userName}}" class="address_box">
+		<view class="address">
+			<text>收货人：{{address.userName}}</text>
+			<text>{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</text>
+		</view>
+		<text class="telphone">{{address.telNumber}}</text>
+	</view>
+	<button bindtap="bindHaveAddress" class="address_btn" wx:else>+添加收货地址</button>
+
+	<view class="title">购物车</view>
+	<view class="content">
+		<view class="cartList" wx:for="{{cartList}}" wx:key="goods_id">
+			<view class="check">
+				<checkbox-group bindchange="">
+					<checkbox></checkbox>
+				</checkbox-group>
+			</view>
+			<image class="pic" mode="widthFix" src="{{item.goods_big_logo}}"></image>
+			<view class="detail">
+				<text class="name">{{item.goods_name}}</text>
+				<view class="prices">
+					<text class="price">{{item.goods_price}}</text>
+					<view class="add_del">
+						<view>-</view>
+						<text>1</text>
+						<view>+</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="check">
+			<checkbox-group bindchange="">
+				<checkbox></checkbox>
+			</checkbox-group>
+			全选
+		</view>
+		<view class="allPrice">
+			<text>合计：￥16660</text>
+			<text>包含运费</text>
+		</view>
+		<button>结算2</button>
+	</view>
+
+</view>
