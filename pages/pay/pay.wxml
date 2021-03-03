@@ -1,2 +1,41 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<!--pages/cart/cart.wxml-->
+<view class="yg_cart">
+	<view wx:if="{{address.userName}}" class="address_box">
+		<view class="address">
+			<text>收货人：{{address.userName}}</text>
+			<text>{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</text>
+		</view>
+		<text class="telphone">{{address.telNumber}}</text>
+	</view>
+	<button bindtap="bindHaveAddress" class="address_btn" wx:else>+添加收货地址</button>
+
+	<view class="title">购物车</view>
+	<view class="content">
+		<view class="cartList" wx:for="{{cartList}}" wx:for-index="key" wx:key="goods_id">
+			<view class="check">
+				
+			</view>
+			<image class="pic" mode="widthFix" src="{{item.goods_big_logo}}"></image>
+			<view class="detail">
+				<text class="name">{{item.goods_name}}</text>
+				<view class="prices">
+					<text class="price">￥{{item.goods_price}}</text>
+					<view class="add_del">
+						<text>x{{item.num}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="check">
+			
+		</view>
+		<view class="allPrice">
+			<text>合计：<text class="allPri">￥{{allPrices}}</text></text>
+			<text>包含运费</text>
+		</view>
+		<view class="pay_btn" bindtap="handlePay">支付{{allCheckedNum?'('+allCheckedNum+')':''}}</view>
+	</view>
+
+</view>

@@ -103,6 +103,7 @@ Page({
 				goods_name: this.data.goods_detail.goods_name,
 				goods_big_logo: this.data.goods_detail.goods_big_logo,
 				goods_price: this.data.goods_detail.goods_price,
+				isChecked: false
 			};
 		}
 		wx.setStorage({

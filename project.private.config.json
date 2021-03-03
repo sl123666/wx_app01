@@ -41,6 +41,18 @@
                     "pathName": "pages/cart/cart",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/pay/pay",
+                    "pathName": "pages/pay/pay",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/logi",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

@@ -11,10 +11,10 @@
 
 	<view class="title">购物车</view>
 	<view class="content">
-		<view class="cartList" wx:for="{{cartList}}" wx:key="goods_id">
+		<view class="cartList" wx:for="{{cartList}}" wx:for-index="key" wx:key="goods_id">
 			<view class="check">
-				<checkbox-group bindchange="">
-					<checkbox></checkbox>
+				<checkbox-group bindchange="isCheck" data-key="{{item.goods_id}}">
+					<checkbox checked="{{item.isChecked}}"></checkbox>
 				</checkbox-group>
 			</view>
 			<image class="pic" mode="widthFix" src="{{item.goods_big_logo}}"></image>
@@ -23,9 +23,9 @@
 				<view class="prices">
 					<text class="price">{{item.goods_price}}</text>
 					<view class="add_del">
-						<view>-</view>
-						<text>1</text>
-						<view>+</view>
+						<view bindtap="reduce" data-key="{{item.goods_id}}">-</view>
+						<text>{{item.num}}</text>
+						<view bindtap="add" data-key="{{item.goods_id}}">+</view>
 					</view>
 				</view>
 			</view>
@@ -33,16 +33,16 @@
 	</view>
 	<view class="footer">
 		<view class="check">
-			<checkbox-group bindchange="">
-				<checkbox></checkbox>
+			<checkbox-group bindchange="allCheck">
+				<checkbox checked="{{all_checked}}"></checkbox>
 			</checkbox-group>
 			全选
 		</view>
 		<view class="allPrice">
-			<text>合计：￥16660</text>
+			<text>合计：<text class="allPri">￥{{allPrices}}</text></text>
 			<text>包含运费</text>
 		</view>
-		<button>结算2</button>
+		<view class="pay_btn" bindtap="handlePay">结算{{allCheckedNum?'('+allCheckedNum+')':''}}</view>
 	</view>
 
 </view>
